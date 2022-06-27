@@ -1,0 +1,22 @@
+version: "3"
+services:
+  mongo:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDBROOT_USERNAME=admin
+      - MONGO_INITDBROOT_PASSWORD=tssnadmin
+    ports:
+      - "27019:27017"
+    volumes: 
+      #- ./init-mongo.js:/data/db
+      - dbdata:/data
+    restart: always
+  forum:
+    image: forum:latest
+    ports:
+      - "8081:8080"
+    depends_on:
+      - mongo
+    restart: always
+volumes:
+  dbdata:

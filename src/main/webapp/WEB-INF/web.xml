@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://JAVA.sun.com/xml/ns/javaee" 	
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+	version="3.0">
+	<welcome-file-list>
+       <welcome-file>index.html</welcome-file>
+       <welcome-file>index.htm</welcome-file>
+       <welcome-file>index.jsp</welcome-file>
+       <welcome-file>default.html</welcome-file>
+       <welcome-file>default.htm</welcome-file>
+       <welcome-file>default.jsp</welcome-file>
+   </welcome-file-list>
+	
+<!--
+  <servlet>
+    <servlet-name>Test</servlet-name>
+    <servlet-class>com.nuno.servlets.Test</servlet-class>
+    <multipart-config>
+        <location>/Users/mateo21/fichierstmp/</location> 
+        <max-file-size>10485760</max-file-size> 
+        <max-request-size>52428800</max-request-size>
+        <file-size-threshold>1048576</file-size-threshold>
+    </multipart-config>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/bonjour</url-pattern>
+  </servlet-mapping>
+-->    
+  <servlet>
+    <servlet-name>Accueil</servlet-name>
+    <servlet-class>com.nuno.servlets.Accueil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Accueil</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <jsp-config>
+       <jsp-property-group>
+           <url-pattern>*.jsp</url-pattern>
+           <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+       </jsp-property-group>
+   </jsp-config>
+</web-app>
